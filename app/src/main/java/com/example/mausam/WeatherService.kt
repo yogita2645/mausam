@@ -11,11 +11,9 @@ import retrofit2.http.Query
 
 //https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API key}
 //https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
-//https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
-//befa1c274c93237d9a555492646e100a
 
 const val BASE_URL = "https://api.openweathermap.org/"
-const val API_KEY = "befa1c274c93237d9a555492646e100a"
+private const val API_KEY = "befa1c274c93237d9a555492646e100a"
 //var LAT =
 interface WeatherService {
 
