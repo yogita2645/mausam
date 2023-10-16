@@ -16,13 +16,13 @@ data class ListItem(
     val main: Main,
     val pop: Double,
     val rain: Rain,
-    val systum : Systum,
+    val system : System,
     val visibility: Int,
     val weather: List<Weather>,
     val wind: Wind
 )
 
-data class Systum (
+data class System (
     val pod: String
 )
 

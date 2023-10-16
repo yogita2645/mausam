@@ -7,48 +7,61 @@
 
 
     <ImageView
+        android:id="@+id/imageView4"
         android:layout_width="40dp"
         android:layout_height="53dp"
+        android:background="@color/cardview_light_background"
         android:src="@drawable/back"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp"
-        android:background="@color/cardview_light_background"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.282"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="17dp">
 
     </ImageView>
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="16dp"
         android:padding="10dp"
         android:text="My Locations"
         android:textSize="26sp"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:ignore="MissingConstraints">
-    </TextView>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"></TextView>
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="24dp"
         android:padding="10dp"
         android:text="EDIT"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="337dp"
-        tools:layout_editor_absoluteY="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.733"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"></TextView>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="290dp"
         android:layout_height="54dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/enter_bar"
         android:padding="10dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="100dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:ignore="MissingConstraints">
 
 
         <ImageView
@@ -62,15 +75,25 @@
             android:id="@+id/etCity"
             android:layout_width="210dp"
             android:layout_height="match_parent"
+
             android:background="@color/cardview_light_background"
             android:hint="City"
+            android:inputType=""
             android:padding="5dp">
 
         </EditText>
 
     </LinearLayout>
 
-
+    <Button
+        android:id="@+id/search_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
