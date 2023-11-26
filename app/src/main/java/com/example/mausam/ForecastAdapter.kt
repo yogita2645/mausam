@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mausam.databinding.RvHourlyForecastBinding
 import com.example.mausam.response.ListItem
+import java.lang.Math.ceil
 
 
 class ForecastAdapter(
@@ -18,11 +19,14 @@ class ForecastAdapter(
 
         fun onBind(item: ListItem) {
             val context = binding.root.context
-            binding.time.text="14.20"
+            var tempo= item.dt_txt
+            var currTemp =(ceil(item.main.temp)-273.00).toString()+"°C"
+            binding.temp.text=(ceil(item.main.temp)-273.00).toString()+"°C"
+            binding.feelsLike.text= tempo.substring(10,19)
             binding.humidity.text = item.main.humidity.toString()
-            binding.description.text = "clear sky"
-            binding.minTemp.text = item.main.temp_min.toString()
-            binding.maxTemp.text = item.main.temp_max.toString()
+            binding.description.text = item.weather[0].description
+            binding.minTemp.text = (ceil(item.main.temp_min)-273.00).toString()+"°C"
+            binding.maxTemp.text = (ceil(item.main.temp_max-272.00)).toString()+"°C"
         }
     }
 

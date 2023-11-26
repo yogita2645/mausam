@@ -22,7 +22,7 @@
 
 
             <TextView
-                android:id="@+id/time"
+                android:id="@+id/feelsLike"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="3dp"
-                android:text="21"
+                android:text="20°C"
                 android:textColor="@color/white"
                 android:textSize="20dp">
 

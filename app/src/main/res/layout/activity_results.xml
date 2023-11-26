@@ -6,7 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_bg"
-    tools:context=".MainActivity">
+    tools:context=".ResultsActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
 
 
     <ImageView
@@ -14,6 +21,7 @@
         android:layout_width="40dp"
         android:layout_height="53dp"
         android:layout_marginTop="16dp"
+        android:paddingLeft="10dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.0"
@@ -25,31 +33,38 @@
         tools:layout_marginStart="12dp"
         tools:layout_marginTop="16dp" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="215dp"
-        android:layout_height="52dp"
-        android:gravity="center"
-        android:text="Mausam ka haal"
-        android:textColor="@color/white"
-        android:textSize="26sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.293" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="215dp"
+            android:layout_height="52dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="103dp"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingLeft="23dp"
+            android:text="Mausam ka haal"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toTopOf="@+id/hourly"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.068" />
 
-    <LinearLayout
+        <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="110dp"
         android:layout_height="139dp"
         android:layout_marginTop="108dp"
         android:orientation="vertical"
+        android:paddingLeft="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/stateName"
             android:layout_width="match_parent"
             android:layout_height="24dp"
             android:layout_gravity="left"
@@ -60,6 +75,7 @@
             android:textSize="17dp" />
 
         <TextView
+            android:id="@+id/cityName"
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:layout_gravity="left"
@@ -70,14 +86,15 @@
             android:textSize="19dp" />
 
         <TextView
+            android:id="@+id/currTemp"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:layout_gravity="left"
             android:gravity="center_vertical"
             android:paddingTop="1.5dp"
-            android:text="32"
+            android:text="20°C"
             android:textColor="@color/white"
-            android:textSize="45dp" />
+            android:textSize="30dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -92,27 +109,36 @@
     <LinearLayout
         android:id="@+id/hourly"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_marginTop="300dp">
+        tools:layout_marginTop="80dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_forecast"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/rv_hourly_forecast">
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/rv_hourly_forecast"
+            android:orientation="horizontal">
 
         </androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hourly">
+</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:padding="2dp"
+            android:paddingLeft="8dp"
+            android:layout_below="@+id/hourly"
+            android:textStyle="bold"
+            android:fontFamily="cursive"
+            android:text="Stats of temp, humidity, min temp, max temp are shown above as per time"
+            android:textColor="@color/white" />
 
-    </LinearLayout>
 
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
